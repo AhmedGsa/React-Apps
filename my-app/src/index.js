@@ -1,25 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Component = () => {
+const BookList = () => {
   return <>
-    <h1 className="hello">This is a component</h1>
-    <Card/>
+    <Book/>
+    <Book/>
+    <Book/>
   </>
 };
 
-const Card = () => {
+const Book = () => {
   return (
     <div>
-      <h1>Hello world</h1>
-      <ul>
-        <li>Hello</li>
-        <li>Hello</li>
-        <li>Hello</li>
-      </ul>
+      <Image/>
+      <Title/>
+      <Author/>
     </div>
   );
 };
 
+const Title = () => {
+    return (
+        <h2>This is the title</h2>
+    )
+}
+
+const Author = () => {
+    return <h3>This is the author</h3>
+}
+
+const Image = () => {
+    return <img src="" alt="" />
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Component />);
+root.render(<BookList />);
