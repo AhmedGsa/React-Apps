@@ -26,6 +26,7 @@ body {
     background-color: white;
     border-radius: 15px;
     padding: 1rem;
+    text-align: center;
 }
 
 .book img {
