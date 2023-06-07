@@ -10,11 +10,15 @@ const BookList = () => {
     console.log(book);
   }
   return (
-    <div className="book-list">
-      {books.map((book) => {
-        return <Book {...book} key={book.id} getBook={getBook} />
-      })}
-    </div>
+    <>
+      <h1 style={{textAlign: "center"}}>Top Selled books</h1>
+      <div className="book-list">
+        {books.map((book, index) => {
+          return <Book {...book} key={book.id} getBook={getBook} bookNumber={index+1} />
+        })}
+      </div>
+    </>
+    
   );
 };
 

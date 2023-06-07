@@ -1,3 +1,4 @@
+import img3 from './images/book-3.jpg'
 export const books = [
     {
       title: "The Last Thing He Told Me: A Novel",
@@ -15,7 +16,7 @@ export const books = [
       title:
         "The Montessori Toddler: A Parent's Guide to Raising a Curious and Responsible Human Being",
       author: "Simone Davies",
-      img: "https://images-na.ssl-images-amazon.com/images/I/71KxZB7ob4L._AC_UL600_SR600,400_.jpg",
+      img: img3,
       id: 3
     }
   ];
