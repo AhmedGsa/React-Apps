@@ -1,3 +1,8 @@
+import img1 from './images/tour-1.jpeg'
+import img2 from './images/tour-2.jpeg'
+import img3 from './images/tour-3.jpeg'
+import img4 from './images/tour-4.jpeg'
+
 export const links = [
     {
         id: 1,
@@ -60,3 +65,45 @@ export const services = [
     }
 ]
 
+export const tours = [
+    {
+        id: 1,
+        img: img1,
+        title: "Tibet Adventure",
+        date: "august 26th, 2020",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem fugit, qui corporis.",
+        location: "china",
+        price: 4000,
+        duration: "6 days"
+    },
+    {
+        id: 2,
+        img: img2,
+        title: "best of java",
+        date: "september 15th, 2020",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem fugit, qui corporis.",
+        location: "indonesia",
+        price: 5000,
+        duration: "10 days"
+    },
+    {
+        id: 3,
+        img: img3,
+        title: "explore hong kong",
+        date: "october 1th, 2020",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem fugit, qui corporis.",
+        location: "hong kong",
+        price: 4000,
+        duration: "8 days"
+    },
+    {
+        id: 4,
+        img: img4,
+        title: "kenya highlights",
+        date: "december 5th, 2019",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem fugit, qui corporis.",
+        location: "kenya",
+        price: 2500,
+        duration: "11 days"
+    }
+]
