@@ -1,10 +1,9 @@
-
 function App() {
   return (
-    <div className='container' >
-      <h1>React hooks</h1>
+    <div className='container'>
+      <h2>Advanced React</h2>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
