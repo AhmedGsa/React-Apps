@@ -259,6 +259,7 @@ ul {
 
 body {
   background: var(--primary-100);
+  min-height: 100vh;
 }
 
 /* * {
@@ -280,6 +281,10 @@ main {
   border-radius: var(--borderRadius);
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow-1);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
 }
 .container h3 {
   margin-bottom: 2rem;
@@ -303,4 +308,9 @@ main {
 }
 .person p {
   color: var(--grey-500);
+}
+
+button {
+  align-self: center;
+  width: 100%;
 }

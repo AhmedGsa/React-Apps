@@ -1,4 +1,10 @@
+import Persons from "./components/Persons";
+
 const App = () => {
-  return <h2>Birthday Reminder - Starter</h2>;
+  return (
+    <main>
+      <Persons/>
+    </main>
+  );
 };
 export default App;
