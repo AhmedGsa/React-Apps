@@ -13,12 +13,13 @@ const MultipleReturnsFetchData = () => {
     fetchUser()
   },[])
   if(user) {
+    const {avatar_url, login, company, bio} = user
     return <div className='user-container'>
       <h2>Fetch data</h2>
-      <img src={user.avatar_url} style={{width: "250px", borderRadius: "15px"}}></img>
-      <h2>{user.login}</h2>
-      <h3>Works at: {user.company}</h3>
-      <p>{user.bio}</p>
+      <img src={avatar_url} style={{width: "250px", borderRadius: "15px"}}></img>
+      <h2>{login}</h2>
+      <h3>Works at: {company}</h3>
+      <p>{bio}</p>
     </div>
   }
   return <h2>Loading</h2>;
