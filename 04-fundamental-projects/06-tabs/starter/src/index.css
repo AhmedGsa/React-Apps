@@ -267,6 +267,7 @@ ul {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 4rem;
+  width: 20vw;
 }
 
 .job-btn {
@@ -304,6 +305,7 @@ ul {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 2rem;
+  row-gap: 1rem;
   align-items: center;
   margin-bottom: 1.25rem;
 }
@@ -337,4 +339,8 @@ ul {
   .active-btn {
     box-shadow: -2px 0px var(--primary-500);
   }
+}
+
+.container {
+  display: flex;
 }
