@@ -1,4 +1,9 @@
+import Questions from "./components/Questions";
+
 const App = () => {
-  return <h2>Accordion Starter</h2>;
+  return <main className="container">
+    <h1>Questions</h1>
+    <Questions/>
+  </main>;
 };
 export default App;
