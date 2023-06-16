@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-icons": "^4.9.0"
+    "react-icons": "^4.9.0",
+    "uuid": "^9.0.0"
   }
 }

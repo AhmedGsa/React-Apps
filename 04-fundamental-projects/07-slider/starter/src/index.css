@@ -262,6 +262,9 @@ ul {
   position: relative;
   height: 450px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .slide {
   text-align: center;
