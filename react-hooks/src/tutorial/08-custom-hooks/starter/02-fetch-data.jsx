@@ -1,33 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useFetch } from "./useFetch";
+
 const url = 'https://api.github.com/users/QuincyLarson';
 
 const FetchData = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const resp = await fetch(url);
-        // console.log(resp);
-        if (!resp.ok) {
-          setIsError(true);
-          setIsLoading(false);
-          return;
-        }
-
-        const user = await resp.json();
-        setUser(user);
-      } catch (error) {
-        setIsError(true);
-        // console.log(error);
-      }
-      // hide loading
-      setIsLoading(false);
-    };
-    fetchUser();
-  }, []);
+  const [isLoading, isError, user] = useFetch(url)
   // order matters
   // don't place user JSX before loading or error
 
