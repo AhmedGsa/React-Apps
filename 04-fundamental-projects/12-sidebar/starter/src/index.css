@@ -46,7 +46,7 @@ html {
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
   /* rest of the vars */
-  --backgroundColor: var(--grey-50);
+  --backgroundColor: var(--grey-100);
   --textColor: var(--grey-900);
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
@@ -257,3 +257,152 @@ ul {
 Project CSS
 ===============
 */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 2rem;
+  left: 3rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--primary-500);
+  transition: var(--transition);
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); 
+  display: grid;
+  place-items: center;
+  opacity: 1;
+  transition: var(--transition);
+  z-index: 10;
+  visibility: visible;
+}
+
+.modal-content {
+  width: 30vw;
+  height: 20vh;
+  background-color: var(--white);
+  border-radius: var(--borderRadius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal-content .close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--primary-500);
+  cursor: pointer;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: var(---red-dark);
+  transition: var(--transition);
+  transform: translate(-100%);
+  height: 100vh; 
+  background: var(--white);
+  z-index: 5;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.open {
+  transform: translate(0);
+}
+
+.side-bar .top {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.side-bar .top .close-icon {
+  font-size: 1.5rem;
+  color: var(--primary-500);
+  cursor: pointer;
+}
+
+.links li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.links li svg {
+  margin-top: 0.5rem;
+}
+
+.links a {
+  display: block;
+  text-transform: capitalize;
+  color: var(--grey-500);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.links a:hover {
+  color: var(--primary-500);
+}
+
+.social-icons {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: var(--primary-500);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.social-icons a:hover {
+  color: var(--primary-700);
+}
+
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
+}
