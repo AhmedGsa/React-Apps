@@ -419,6 +419,7 @@ Nav Links
 @media screen and (min-width: 992px) {
   .nav-links {
     display: flex;
+    align-items: center;
     justify-content: center;
 
     align-self: stretch;
