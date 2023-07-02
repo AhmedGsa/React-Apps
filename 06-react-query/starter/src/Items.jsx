@@ -1,11 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
 import SingleItem from './SingleItem';
-import customAxios from './utils';
-const Items = ({ items }) => {
-  const {isLoading, error, data} = useQuery({
-    queryKey: ["tasks"],
-    queryFn: () => customAxios.get("/")
-  })
+import { useFetchTasks } from './react-query-custom-hooks';
+
+const Items = () => {
+  const {isLoading, error, data} = useFetchTasks()
   if(isLoading) {
     return <p>Loading...</p>
   }

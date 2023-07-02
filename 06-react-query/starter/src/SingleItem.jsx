@@ -1,34 +1,15 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import customAxios from "./utils";
-import { toast } from "react-toastify";
+import { useDeleteTask, useUpdateTask } from "./react-query-custom-hooks";
 
 const SingleItem = ({ item }) => {
-  const queryClient = useQueryClient()
-  const { mutate: updateTask } = useMutation({
-    mutationFn: ({id, isDone}) => customAxios.patch(`/${id}`, { isDone: isDone }),
-    onError: (error) => {
-      toast.error(error.response.data.msg);
-    },
-    onSuccess: (response) => {
-      queryClient.invalidateQueries({queryKey: ["tasks"]})
-    },
-  });
-  const { mutate: deleteTask } = useMutation({
-    mutationFn: ({id}) => customAxios.delete(`/${id}`),
-    onError: (error) => {
-      toast.error(error.response.data.msg);
-    },
-    onSuccess: (response) => {
-      queryClient.invalidateQueries({queryKey: ["tasks"]})
-    },
-  });
+  const { updateTask } = useUpdateTask();
+  const { deleteTask } = useDeleteTask();
   return (
     <div className="single-item">
       <input
         type="checkbox"
         checked={item.isDone}
         onChange={(e) => {
-          updateTask({id: item.id, isDone: e.target.checked});
+          updateTask({ id: item.id, isDone: e.target.checked });
         }}
       />
       <p
@@ -42,7 +23,7 @@ const SingleItem = ({ item }) => {
       <button
         className="btn remove-btn"
         type="button"
-        onClick={() => deleteTask({id: item.id})}
+        onClick={() => deleteTask({ id: item.id })}
       >
         delete
       </button>

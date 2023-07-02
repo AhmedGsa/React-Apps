@@ -1,22 +1,8 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
-import customAxios from './utils';
-import { toast } from 'react-toastify';
+import { useCreateTask } from './react-query-custom-hooks';
 
 const Form = () => {
-  const [newItemName, setNewItemName] = useState('');
-  const queryClient = useQueryClient()
-  const {mutate: createTask, isLoading, error} = useMutation({
-    mutationFn: () => customAxios.post("/", {title: newItemName}),
-    onError: (error) => {
-      toast.error(error.response.data.msg)
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({queryKey: ["tasks"]})
-      toast.success("Task added successfully !")
-      setNewItemName("")
-    }
-  })
+  const {createTask, isLoading, newItemName, setNewItemName} = useCreateTask()
   const handleSubmit = (e) => {
     e.preventDefault();
     createTask()
