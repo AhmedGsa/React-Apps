@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { useCreateTask } from './react-query-custom-hooks';
 
 const Form = () => {
-  const {createTask, isLoading, newItemName, setNewItemName} = useCreateTask()
+  const [newItemName, setNewItemName] = useState("");
+  const {createTask, isLoading} = useCreateTask()
   const handleSubmit = (e) => {
     e.preventDefault();
-    createTask()
+    createTask(newItemName, {onSuccess: () => {
+      setNewItemName("")
+    }})
   };
   return (
     <form onSubmit={handleSubmit}>

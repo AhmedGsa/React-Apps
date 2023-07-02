@@ -12,24 +12,22 @@ export const useFetchTasks = () => {
 };
 
 export const useCreateTask = () => {
-  const [newItemName, setNewItemName] = useState("");
   const queryClient = useQueryClient();
   const {
     mutate: createTask,
     isLoading,
     error,
   } = useMutation({
-    mutationFn: () => customAxios.post("/", { title: newItemName }),
+    mutationFn: (taskName) => customAxios.post("/", { title: taskName }),
     onError: (error) => {
       toast.error(error.response.data.msg);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["tasks"] });
       toast.success("Task added successfully !");
-      setNewItemName("");
     },
   });
-  return { createTask, isLoading, error, newItemName, setNewItemName };
+  return { createTask, isLoading, error };
 };
 
 export const useUpdateTask = () => {
