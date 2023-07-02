@@ -3,8 +3,8 @@ import SingleItem from './SingleItem';
 import customAxios from './utils';
 const Items = ({ items }) => {
   const {isLoading, error, data} = useQuery({
-    queryKey: ["items"],
-    queryFn: () => customAxios.get("/ad")
+    queryKey: ["tasks"],
+    queryFn: () => customAxios.get("/")
   })
   if(isLoading) {
     return <p>Loading...</p>
