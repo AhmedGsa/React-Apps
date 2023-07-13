@@ -11,6 +11,7 @@ const Wrapper = styled.article`
   }
   img {
     height: 15rem;
+    width: 100%;
     border-top-left-radius: var(--borderRadius);
     border-top-right-radius: var(--borderRadius);
   }
