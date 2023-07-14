@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useOutletContext } from 'react-router-dom';
 import axios from 'axios'
 import CocktailList from '../components/CocktailList';
 import SearchForm from '../components/SearchForm';
@@ -13,6 +13,8 @@ export const loader = async () => {
 
 const Landing = () => {
   const {drinks} = useLoaderData()
+  // const {someInfo} = useOutletContext()
+  // console.log(someInfo);
   return (
     <div>
       <SearchForm />
