@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Wrapper from "../assets/wrappers/CocktailPage";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Navigate, useLoaderData } from "react-router-dom";
 
 const fetchCocktailUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
@@ -9,11 +9,15 @@ const fetchCocktailUrl =
 export const loader = async ({ params }) => {
   const { id } = params;
   const { data } = await axios.get(`${fetchCocktailUrl}${id}`);
-  return { cocktail: data.drinks[0], id };
+  return { cocktail: data?.drinks?.[0], id };
 };
 
 const Cocktail = () => {
   const { id, cocktail } = useLoaderData();
+  if(!cocktail) {
+    // return <h2>Something went wrong!</h2>
+    return <Navigate to="/" />
+  }
   const getIngredients = () => {
     let stop = false;
     const ingredients = [];
