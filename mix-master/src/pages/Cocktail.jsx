@@ -14,7 +14,20 @@ export const loader = async ({ params }) => {
 
 const Cocktail = () => {
   const { id, cocktail } = useLoaderData();
-  console.log(cocktail);
+  const getIngredients = () => {
+    let stop = false;
+    const ingredients = [];
+    let count = 1;
+    while(!stop && count <= 15) {
+      if(cocktail[`strIngredient${count}`]) {
+        ingredients.push(cocktail[`strIngredient${count}`])
+      } else {
+        stop = true;
+      }
+      count++;
+    }
+    return ingredients;
+  }
   return (
     <Wrapper>
       <header>
@@ -41,6 +54,10 @@ const Cocktail = () => {
           <p>
             <span className="drink-data">glass:</span>
             {cocktail.strGlass}
+          </p>
+          <p>
+            <span className="drink-data">ingredients:</span>
+            {getIngredients().join(", ")}
           </p>
           <p>
             <span className="drink-data">instructions:</span>
